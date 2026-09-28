@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+<html lang="en">
+     <link rel="stylesheet" href="styles.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Gaming Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="galaxy-logo.PNG" type="image/png">
+    <!-- Previous inline stylesheet retained for reference during the CSS split.
+    <style>
+         <script src="script.js" defer></script>
+        :root {
+            --bg: #07131f;
+            --bg-2: #0f1f2d;
+            --panel: rgba(16, 28, 42, 0.9);
+            --primary: #00e5ff;
+            --primary-2: #74f1ff;
+            --text: #edf7ff;
+            --muted: #b6c7d7;
+            --line: rgba(255,255,255,0.12);
+        }
+            <div id="product-list"></div>
+            <link rel="stylesheet" href="style.css">
+<script src="fullscreen.js"></script>
+
+
+
+        * { box-sizing: border-box; }
+         body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at top, rgba(0, 229, 255, 0.12), transparent 35%),
+                linear-gradient(180deg, var(--bg), var(--bg-2));
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: 0 auto;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(7, 19, 31, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 76px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary-2);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .brand-mark {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at 30% 30%, #10314d, #081426 55%);
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 18px rgba(0, 229, 255, 0.25);
+        }
+
+        .brand-mark svg {
+            width: 42px;
+            height: 42px;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .hero {
+            padding: 90px 0 60px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.2rem;
+            align-items: center;
+        }
+
+        .eyebrow {
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            font-weight: 700;
+            font-size: 0.76rem;
+            margin-bottom: 0.8rem;
+        }
+
+        h1 {
+            margin: 0 0 1rem;
+            font-size: clamp(2.6rem, 5vw, 4.5rem);
+            line-height: 1.05;
+            color: var(--text);
+        }
+
+        .hero p {
+            color: var(--muted);
+            font-size: 1.1rem;
+            max-width: 650px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.6rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 1.6rem;
+            border-radius: 12px;
+            font-weight: 700;
+        }
+
+        .btn.primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-2));
+            color: #031015;
+        }
+
+        .btn.secondary {
+            border: 1px solid var(--line);
+            color: var(--text);
+            background: rgba(255,255,255,0.02);
+        }
+
+        .hero-card {
+            padding: 2rem;
+            background: linear-gradient(180deg, rgba(18, 30, 45, 0.95), rgba(8, 19, 28, 0.9));
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.28);
+        }
+
+        .hero-card h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .hero-card ul {
+            margin: 0;
+            padding-left: 1.2rem;
+            color: var(--muted);
+        }
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section.alt {
+            background: rgba(255,255,255,0.02);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+        }
+
+        .about-box,
+        .contact-box {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 2rem;
+        }
+
+        .info-box {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--line);
+            border-left: 4px solid var(--primary);
+            border-radius: 16px;
+            padding: 1.5rem 1.25rem;
+            margin-top: 1.25rem;
+            box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+        }
+
+        .info-box p {
+            margin: 0 0 1rem;
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-box p,
+        .contact-box p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 1.5rem;
+            box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+        }
+
+        .card .icon {
+            font-size: 2.3rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .card h3 {
+            margin: 0.7rem 0 0.5rem;
+            font-size: 1.35rem;
+            color: var(--text);
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .game-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 1.4rem 1rem;
+            text-align: center;
+            box-shadow: 0 18px 30px rgba(0,0,0,0.12);
+        }
+
+        .game-card .icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .game-card h3 {
+            margin: 0;
+            color: var(--text);
+            font-size: 1.1rem;
+        }
+
+        .game-link {
+            display: inline-block;
+            margin-top: 0.9rem;
+            padding: 0.55rem 0.8rem;
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            color: var(--primary-2);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .game-link:hover,
+        .game-link:focus-visible {
+            background: var(--primary);
+            color: #031015;
+        }
+
+        .creative-section {
+            padding: 90px 0;
+            background: rgba(255,255,255,0.02);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .creative-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .creative-card {
+            background: linear-gradient(180deg, rgba(8, 20, 38, 0.92), rgba(10, 25, 35, 0.92));
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 1.75rem;
+            box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+        }
+
+        .creative-card .icon {
+            font-size: 2.4rem;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+        }
+
+        .creative-card h3 {
+            margin: 0 0 0.7rem;
+            color: #FFFFFF;
+            font-size: 1.4rem;
+        }
+
+        .creative-card p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .app-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.1rem;
+        }
+
+        .app-link {
+            display: inline-block;
+            padding: 0.55rem 0.75rem;
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            color: var(--primary-2);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .app-link:hover,
+        .app-link:focus-visible {
+            background: var(--primary);
+            color: #031015;
+        }
+
+        .service-section {
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .service-section .service-box {
+            background-color: #081426;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 1px solid var(--line);
+        }
+
+        .service-section h2 {
+            color: #00AEEF;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .service-section h3 {
+            color: #FFFFFF;
+            margin-top: 0;
+        }
+
+        .signup-section {
+            padding: 32px 0 72px;
+            background: rgba(255,255,255,0.02);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .signup-box {
+            background: linear-gradient(180deg, rgba(18, 30, 45, 0.98), rgba(8, 19, 28, 0.96));
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 520px;
+            margin: 0 auto;
+            box-shadow: 0 18px 35px rgba(0,0,0,0.24);
+        }
+
+        .signup-box h2 {
+            color: var(--primary);
+            text-align: center;
+            margin: 0 0 0.35rem;
+        }
+
+        .auth-intro {
+            margin: 0 0 1.25rem;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .auth-tabs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+            padding: 0.25rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+        }
+
+        .auth-tab {
+            border: 1px solid rgba(140, 224, 255, 0.28);
+            border-radius: 8px;
+            padding: 0.7rem;
+            background: rgba(8, 18, 30, 0.95);
+            color: var(--text);
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+        }
+
+        .auth-tab.active {
+            background: rgba(8, 18, 30, 0.95);
+            border-color: rgba(70, 183, 255, 0.72);
+            color: var(--text);
+        }
+
+        .auth-tab:hover,
+        .auth-tab:focus-visible,
+        .auth-tab.active:hover,
+        .auth-tab.active:focus-visible {
+            background: linear-gradient(135deg, var(--primary), var(--primary-2));
+            border-color: var(--primary-2);
+            color: #031015;
+            box-shadow: 0 0 18px rgba(70, 183, 255, 0.5);
+            outline: none;
+        }
+
+        .signup-box form {
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .auth-panel[hidden] {
+            display: none;
+        }
+
+        .protected-section {
+            display: none;
+        }
+
+        body.auth-locked .hero,
+        body.auth-locked footer {
+            display: none;
+        }
+
+        body.auth-locked .nav-links a:not([href="#account"]) {
+            display: none;
+        }
+
+        body.auth-locked #highlights-drawer-open {
+            display: none;
+        }
+
+        body.authenticated .protected-section {
+            display: block;
+        }
+
+        .auth-status {
+            min-height: 1.5rem;
+            margin: 1rem 0 0;
+            color: var(--primary-2);
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .signup-box input,
+        .signup-box textarea {
+            width: 100%;
+            margin-top: 0.35rem;
+            padding: 0.8rem 0.9rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            background: #081426;
+            color: var(--text);
+            font: inherit;
+        }
+
+        .signup-box input:focus,
+        .signup-box textarea:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 1px;
+        }
+
+        .signup-box textarea {
+            width: 80%;
+            max-width: 500px;
+            min-height: 120px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid #00AEEF;
+            background-color: #081426;
+            color: white;
+            font-size: 16px;
+            resize: vertical;
+        }
+
+        .signup-box label {
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        .signup-box button[type="submit"] {
+            background: rgba(8, 18, 30, 0.95);
+            color: var(--text);
+            border: 1px solid rgba(140, 224, 255, 0.28);
+            padding: 0.85rem 1.2rem;
+            border-radius: 8px;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+        }
+
+        .signup-box button[type="submit"]:hover,
+        .signup-box button[type="submit"]:focus-visible {
+            background: linear-gradient(135deg, var(--primary), var(--primary-2));
+            border-color: var(--primary-2);
+            color: #031015;
+            box-shadow: 0 0 18px rgba(70, 183, 255, 0.5);
+            outline: none;
+        }
+
+        #newsletter {
+            width: min(700px, 92%);
+            background-color: #081426;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+        }
+
+        #newsletter h2 {
+            color: #00AEEF;
+        }
+
+        #newsletter p {
+            color: var(--muted);
+        }
+
+        #newsletter form {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+            margin-top: 1.25rem;
+        }
+
+        #newsletter input {
+            width: 300px;
+            padding: 10px;
+            border: 2px solid #00AEEF;
+            border-radius: 5px;
+            background: #ffffff;
+            color: #081426;
+            font-size: 16px;
+        }
+
+        #newsletter button {
+            background-color: #00AEEF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #newsletter button:hover {
+            background-color: #0077CC;
+        }
+
+        .form-status {
+            min-height: 1.5rem;
+            margin: 0.8rem 0 0;
+            color: var(--primary-2);
+            font-weight: 700;
+        }
+
+        @media (max-width: 480px) {
+            #newsletter form {
+                flex-direction: column;
+            }
+        }
+
+        #videos {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #videos h2 {
+            color: #00AEEF;
+        }
+
+        #videos video {
+            margin: 10px;
+            border-radius: 10px;
+            border: 2px solid #00AEEF;
+        }
+
+        .video-grid {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .video-grid video {
+            width: 300px;
+            border-radius: 10px;
+            border: 2px solid #00AEEF;
+            background: #081426;
+            box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+        }
+        
+        .stat strong {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--primary-2);
+        }
+
+        .stat span {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 0.9rem;
+        }
+
+        .contact-item {
+            padding: 1rem 1.1rem;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-bottom: 0.25rem;
+            color: var(--primary-2);
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 0.9rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid #00AEEF;
+            background-color: #081426;
+            color: white;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #b6c7d7;
+        }
+
+        .contact-form button {
+            border: 0;
+            cursor: pointer;
+            background: linear-gradient(135deg, var(--primary), var(--primary-2));
+            color: #06131b;
+            padding: 0.9rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .contact-form button:hover {
+            box-shadow: 0 14px 30px rgba(0, 229, 255, 0.25);
+        }
+
+        .chat-box {
+            min-height: 150px;
+            max-height: 260px;
+            overflow-y: auto;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #081426;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+        }
+
+        .chat-box p {
+            margin: 0 0 0.8rem;
+            color: var(--muted);
+        }
+
+        .chat-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .chat-box strong {
+            color: var(--primary-2);
+        }
+
+        .chat-form {
+            display: flex;
+            gap: 0.7rem;
+        }
+
+        .chat-form input {
+            flex: 1;
+            min-width: 0;
+            padding: 0.85rem 1rem;
+            border: 2px solid #00AEEF;
+            border-radius: 10px;
+            background: #081426;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .chat-form input::placeholder {
+            color: var(--muted);
+        }
+
+        .chat-form button {
+            border: 0;
+            border-radius: 10px;
+            padding: 0.85rem 1.2rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-2));
+            color: #06131b;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        @media (max-width: 480px) {
+            .chat-form {
+                flex-direction: column;
+            }
+        }
+
+        #chat {
+            width: min(400px, 92%);
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        #chat .chat-box {
+            height: 200px;
+            background-color: #081426;
+            color: white;
+            border: 2px solid #00AEEF;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+            overflow-y: auto;
+        }
+
+        #chat input {
+            width: 70%;
+            flex: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        #chat button {
+            padding: 10px 15px;
+            background-color: #00AEEF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .cta {
+            display: inline-block;
+            margin-top: 1.2rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-2));
+            color: #06131b;
+            padding: 0.9rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+        }
+
+        footer {
+            padding: 26px 0 45px;
+            text-align: center;
+            color: var(--muted);
+            border-top: 1px solid var(--line);
+        }
+
+        @media (max-width: 760px) {
+            .hero-grid,
+            .feature-grid,
+            .menu-grid,
+            .contact-grid,
+            .stats,
+            .nav {
+                display: block;
+                text-align: center;
+                padding: 1rem 0;
+            }
+
+            .nav-links {
+                justify-content: center;
+                padding-top: 0.6rem;
+            }
+        }
+    </style>
+    -->
+</head>
+<body class="auth-locked">
+    <header class="topbar">
+        <div class="container nav">
+            <a class="brand" href="#home" aria-label="Galaxy Gaming Hub home">
+                <div class="brand-mark">
+                    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Galaxy logo icon">
+                        <defs>
+                            <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#74f1ff"/>
+                                <stop offset="100%" stop-color="#00e5ff"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="60" cy="60" r="50" fill="none" stroke="url(#g1)" stroke-width="4"/>
+                        <circle cx="45" cy="42" r="8" fill="#74f1ff" opacity="0.9"/>
+                        <path d="M29 56c0-10 8-18 18-18h26c10 0 18 8 18 18v13c0 12-10 22-22 22H51c-12 0-22-10-22-22V56z" fill="none" stroke="url(#g1)" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M36 51h48" stroke="url(#g1)" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M49 75h22l-4 11H53l-4-11z" fill="url(#g1)" opacity="0.9"/>
+                        <path d="M29 69h62" stroke="#74f1ff" stroke-width="4" stroke-linecap="round" opacity="0.75"/>
+                        <circle cx="84" cy="36" r="4" fill="#ffd166"/>
+                        <circle cx="89" cy="53" r="3" fill="#ffd166" opacity="0.8"/>
+                        <path d="M88 75l9-11M94 82l11-15" stroke="#74f1ff" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+                    </svg>
+                </div>
+                <span>Galaxy</span>
+            </a>
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#games">Games</a>
+                <a href="#avatar">Avatar</a>
+                <a href="#merchandise">Store</a>
+                <a href="#editing">Editor &amp; Animation</a>
+                <a href="#events">Events</a>
+                <a href="#account">Account</a>
+                <button class="logout-button" id="logout-button" type="button">Log Out</button>
+            </nav>
+
+            <div class="header-shortcuts" aria-label="Galaxy quick access">
+                <a class="header-shortcut" href="#account" data-target="#store" aria-disabled="true">
+                    <span class="header-shortcut-icon" aria-hidden="true">🪙</span>
+                    <span class="header-shortcut-copy">
+                        <strong>Galaxy Coins</strong>
+                        <small class="header-shortcut-status">Sign in first to unlock</small>
+                    </span>
+                    <strong class="header-shortcut-balance" id="coin-balance" hidden>250</strong>
+                </a>
+                <a class="header-shortcut" href="#account" data-target="#missions" aria-disabled="true">
+                    <span class="header-shortcut-icon" aria-hidden="true">🎯</span>
+                    <span class="header-shortcut-copy">
+                        <strong>Missions</strong>
+                        <small class="header-shortcut-status">Sign in first to unlock</small>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </header>
+     <button id="highlights-drawer-open" class="highlights-edge-open" type="button" aria-label="Open Highlights" aria-haspopup="dialog" aria-expanded="false" aria-controls="highlights-drawer"><span aria-hidden="true">★</span> Highlights</button>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <div class="eyebrow">Gaming lounge and Hub</div>
+                    <h1>Level up with comfort and fun with 
+                     your friends and families and meet other players.</h1>
+                    <p>Welcome to Galaxy Gaming Hub,spend your time playing games in a modern and friendly atmosphere with friends or family.</p>
+                    <img class="hero-image" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Gaming setup with colorful lighting" fetchpriority="high">
+                </div>
+
+            </div>
+        </section>
+        <section id="community" class="section alt community-section">
+            <div class="container community-layout">
+                <dialog id="highlights-drawer" class="community-feed highlights-drawer" aria-labelledby="community-highlights-title">
+                    <div class="community-feed-heading">
+                        <div>
+                            <p class="community-kicker">FROM THE PLAYERS</p>
+                            <h2 id="community-highlights-title">Community Highlights</h2>
+                        </div>
+                        <div class="community-feed-actions">
+                            <button id="highlights-drawer-close" class="community-panel-toggle highlights-drawer-close" type="button" autofocus>Close highlights</button>
+                            <button id="community-panel-toggle" class="community-panel-toggle" type="button" aria-controls="community-post-panel" aria-expanded="true">Hide upload panel</button>
+                            <label class="highlight-filter-label" for="highlight-filter">Game</label>
+                            <select id="highlight-filter">
+                                <option value="all">All games</option>
+                                <option>Fortnite</option><option>Valorant</option><option>Minecraft</option>
+                                <option>PUBG</option><option>EA SPORTS FC</option><option>Genshin Impact</option>
+                                <option>Wuthering Waves</option><option>Honkai Impact 3rd</option>
+                                <option>Honkai: Star Rail</option><option>Zenless Zone Zero</option><option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <aside class="community-post-panel" id="community-post-panel">
+                        <p class="community-kicker">COMMUNITY</p>
+                        <h2>Post a highlight</h2>
+                        <form id="highlight-form">
+                            <label for="highlight-player">Gamer name</label>
+                            <input id="highlight-player" type="text" maxlength="24" autocomplete="nickname" required>
+                            <label for="highlight-game">Game</label>
+                            <select id="highlight-game" required>
+                                <option>Fortnite</option>
+                                <option>Valorant</option>                                <option>Minecraft</option>
+                                <option>PUBG</option>
+                                <option>EA SPORTS FC</option>
+                                <option>Genshin Impact</option>
+                                <option>Wuthering Waves</option>
+                                <option>Honkai Impact 3rd</option>
+                                <option>Honkai: Star Rail</option>
+                                <option>Zenless Zone Zero</option>
+                                <option>Other</option>
+                            </select>
+                            <label for="highlight-title">Highlight title</label>
+                            <input id="highlight-title" type="text" maxlength="80" required>
+                            <label for="highlight-description">What happened?</label>
+                            <textarea id="highlight-description" maxlength="500" rows="4" required></textarea>
+                            <label for="highlight-link">Highlight video URL (direct video, YouTube, or Vimeo)</label>
+                            <input id="highlight-link" type="url" placeholder="https://...">
+                            <label for="highlight-video-file">Or upload a video (MP4, WebM, or Ogg; up to 50 MB)</label>
+                            <input id="highlight-video-file" type="file" accept="video/mp4,video/webm,video/ogg,.mp4,.webm,.ogg,.m4v">
+                            <button type="submit">Share highlight</button>
+                        </form>
+                        <p class="community-note">Highlights save in this browser. Friends and messages are in the bottom drawer.</p>
+                        <p id="highlight-status" role="status" aria-live="polite"></p>
+                    </aside>
+                    <p id="highlight-empty" class="highlight-empty">No highlights posted yet.</p>
+                    <div id="highlight-feed" class="highlight-feed" aria-live="polite"></div>
+                </dialog>
+                <button id="community-drawer-open" class="community-drawer-open" type="button" aria-label="Open Friends and Messages" aria-haspopup="dialog" aria-expanded="false" aria-controls="community-drawer"><span aria-hidden="true">☷</span> Friends &amp; Messages</button>
+                <dialog id="community-drawer" class="community-bottom-drawer" aria-labelledby="community-drawer-title">
+                    <div class="community-drawer-heading">
+                        <div>
+                            <p class="community-kicker">COMMUNITY</p>
+                            <h2 id="community-drawer-title">Friends &amp; Messages</h2>
+                        </div>
+                        <button id="community-drawer-close" class="community-panel-toggle" type="button" autofocus>Close</button>
+                    </div>
+                    <div class="community-drawer-content">
+                        <section class="community-friends" aria-labelledby="community-friends-heading">
+                            <h3 id="community-friends-heading">Friends <span id="community-friend-count">0</span></h3>
+                            <p id="community-friends-empty">No friends added yet. Add someone from a highlight.</p>
+                            <ul id="community-friend-list"></ul>
+                        </section>
+                        <section class="community-inbox" aria-labelledby="community-inbox-heading">
+                            <h3 id="community-inbox-heading">Messages</h3>
+                            <label for="community-message-to">Conversation</label>
+                            <select id="community-message-to">
+                                <option value="">Choose a friend</option>
+                            </select>
+                            <p id="community-message-empty">Choose a friend to view messages.</p>
+                            <div id="community-message-history" aria-live="polite"></div>
+                            <form id="community-message-form" class="direct-message-form">
+                                <label for="community-message-input">Write a message</label>
+                                <textarea id="community-message-input" maxlength="500" rows="3" required></textarea>
+                                <button type="submit">Save message</button>
+                            </form>
+                            <p id="community-message-status" class="direct-message-status" role="status" aria-live="polite">Messages save in this browser and are not delivered to other gamers.</p>
+                        </section>
+                    </div>
+                </dialog>
+            </div>
+        </section>
+                <section id="account" class="section account-section">
+                        <div class="container">
+                                <div class="signup-box">
+                                        <h2>GALAXY Account</h2>
+                                        <p class="auth-intro">Create an account or log in to save your profile and claim rewards.</p>
+                                        <div class="auth-tabs" role="tablist" aria-label="Account access">
+                                                <button id="signup-tab" class="auth-tab" type="button" role="tab" aria-controls="signup-form" aria-selected="false">Sign Up</button>
+                                                <button id="login-tab" class="auth-tab active" type="button" role="tab" aria-controls="login-form" aria-selected="true">Log In</button>
+                                        </div>
+                                            <form id="signup-form" class="auth-panel" role="tabpanel" aria-labelledby="signup-tab" hidden>
+                                                <label for="full-name">Full name</label>
+                                                <input id="full-name" type="text" autocomplete="name" required>
+                                                <label for="player-name">Player name</label>
+                                                <input id="player-name" type="text" autocomplete="nickname" required>
+                                                <label for="signup-email">Email</label>
+                                                <input id="signup-email" type="email" autocomplete="email" required>
+                                                <label for="signup-password">Password</label>
+                                                <input id="signup-password" type="password" autocomplete="new-password" minlength="6" required>
+                                                <button type="submit">Create Account</button>
+                                        </form>
+                                        <form id="login-form" class="auth-panel" role="tabpanel" aria-labelledby="login-tab">
+                                                <label for="login-identifier">Email or player name</label>
+                                                <input id="login-identifier" type="text" autocomplete="username" autocapitalize="none" required>
+                                                <label for="login-password">Password</label>
+                                                <input id="login-password" type="password" autocomplete="current-password" required>
+                                                <button type="submit">Log In</button>
+                                        </form>
+                                        <p class="auth-status" id="auth-status" role="status" aria-live="polite"></p>
+                                </div>
+                        </div>
+                </section>
+
+        <section id="missions" class="section">
+            <div class="container">
+                <h2>Game Missions</h2>
+                <div class="quest-grid">
+                    <article class="quest-card">
+                        <h3>Fortnite</h3>
+                        <p>Win 1 match or complete 3 challenges.</p>
+                        <button class="quest-button" type="button" data-game="Fortnite" data-reward="30">Claim 30 coins</button>
+                    </article>
+                    <article class="quest-card">
+                        <h3>Valorant</h3>
+                        <p>Win 2 rounds in a ranked or casual match.</p>
+                        <button class="quest-button" type="button" data-game="Valorant" data-reward="35">Claim 35 coins</button>
+                    </article>
+                    <article class="quest-card">
+                        <h3>Minecraft</h3>
+                        <p>Build a base and survive for 20 minutes.</p>
+                        <button class="quest-button" type="button" data-game="Minecraft" data-reward="25">Claim 25 coins</button>
+                    </article>
+                    <article class="quest-card">
+                        <h3>PUBG</h3>
+                        <p>Reach the final circle or win a squad match.</p>
+                        <button class="quest-button" type="button" data-game="PUBG" data-reward="40">Claim 40 coins</button>
+                    </article>
+                    <article class="quest-card">
+                        <h3>FIFA</h3>
+                        <p>Win a local match or complete a tournament.</p>
+                        <button class="quest-button" type="button" data-game="FIFA" data-reward="30">Claim 30 coins</button>
+                    </article>
+                    <article class="quest-card">
+                        <h3>Genshin Impact</h3>
+                        <p>Clear a domain or finish a daily quest.</p>
+                        <button class="quest-button" type="button" data-game="Genshin Impact" data-reward="50">Claim 50 coins</button>
+                    </article>
+                    <article class="quest-card">
+                        <h3>Wuthering Waves</h3>
+                        <p>Complete 1 combat chapter or daily mission.</p>
+                        <button class="quest-button" type="button" data-game="Wuthering Waves" data-reward="45">Claim 45 coins</button>
+                    </article>
+                    <article class="quest-card">
+                        <h3>Honkai Impact 3rd</h3>
+                        <p>Finish a battle log event or raid mission.</p>
+                        <button class="quest-button" type="button" data-game="Honkai Impact 3rd" data-reward="45">Claim 45 coins</button>
+                    </article>
+                    <article class="quest-card">
+                        <h3>Honkai: Star Rail</h3>
+                        <p>Clear one Calyx challenge or trail mission.</p>
+                        <button class="quest-button" type="button" data-game="Honkai: Star Rail" data-reward="55">Claim 55 coins</button>
+                    </article>
+                    <article class="quest-card">
+                        <h3>Zenless Zone Zero</h3>
+                        <p>Finish a combat mission or event stage.</p>
+                        <button class="quest-button" type="button" data-game="Zenless Zone Zero" data-reward="50">Claim 50 coins</button>
+                    </article>
+                    <article class="quest-card">
+                        <h3>PlayStation Games</h3>
+                        <p>Complete your assigned challenge and win rewards.</p>
+                        <button class="quest-button" type="button" data-game="PlayStation Games" data-reward="60">Claim 60 coins</button>
+                    </article>
+                    <article class="quest-card">
+                        <h3>Nintendo Games</h3>
+                        <p>Finish a multiplayer or challenge mission.</p>
+                        <button class="quest-button" type="button" data-game="Nintendo Games" data-reward="60">Claim 60 coins</button>
+                    </article>
+                </div>
+                <p class="quest-status" id="quest-status" aria-live="polite">Complete a mission to earn coins.</p>
+            </div>
+        </section>
+
+        <section id="avatar" class="section avatar-section">
+            <div class="container">
+                <h2>Avatar Studio</h2>
+                <p class="avatar-intro">Create a look that is completely yours, then save it to your Galaxy profile.</p>
+                <div class="avatar-studio">
+                    <div class="avatar-preview" id="avatar-preview" aria-label="Your custom avatar preview">
+                        <div class="avatar-aura"></div>
+                        <div class="avatar-character">
+                            <div class="avatar-accessory" id="avatar-accessory-preview" aria-hidden="true"></div>
+                            <div class="avatar-hair" id="avatar-hair-preview" aria-hidden="true"></div>
+                            <div class="avatar-head" id="avatar-head">
+                                <span class="avatar-eyes">● ●</span>
+                                <span class="avatar-mouth">⌣</span>
+                            </div>
+                            <div class="avatar-body" id="avatar-body"></div>
+                        </div>
+                        <strong class="avatar-name" id="avatar-name">Galaxy Player</strong>
+                        <span class="avatar-status" id="avatar-status">Ready to customize</span>
+                    </div>
+                    <form class="avatar-controls" id="avatar-form">
+                        <div class="avatar-control">
+                            <label for="avatar-name-input">Avatar name</label>
+                            <input id="avatar-name-input" type="text" maxlength="24" value="Galaxy Player" autocomplete="off">
+                        </div>
+                        <div class="avatar-control">
+                            <label for="avatar-skin">Skin tone</label>
+                            <select id="avatar-skin">
+                                <option value="sunrise">Sunrise</option>
+                                <option value="honey">Honey</option>
+                                <option value="cocoa">Cocoa</option>
+                                <option value="moon">Moonlight</option>
+                            </select>
+                        </div>
+                        <div class="avatar-control">
+                            <label for="avatar-hair-style">Hairstyle</label>
+                            <select id="avatar-hair-style">
+                                <option value="nebula">Nebula</option>
+                                <option value="flare">Solar Flare</option>
+                                <option value="comet">Comet Curls</option>
+                                <option value="visor">Future Visor</option>
+                            </select>
+                        </div>
+                        <div class="avatar-control">
+                            <label for="avatar-outfit">Outfit</label>
+                            <select id="avatar-outfit">
+                                <option value="neon">Neon Runner</option>
+                                <option value="royal">Royal Champion</option>
+                                <option value="cyber">Cyber Pilot</option>
+                                <option value="cosmic">Cosmic Explorer</option>
+                            </select>
+                        </div>
+                        <div class="avatar-control">
+                            <label for="avatar-accessory-choice">Accessory</label>
+                            <select id="avatar-accessory-choice">
+                                <option value="none">No accessory</option>
+                                <option value="crown">Star Crown</option>
+                                <option value="headset">Pro Headset</option>
+                                <option value="visor">Holo Visor</option>
+                            </select>
+                        </div>
+                        <div class="avatar-control">
+                            <label for="avatar-background">Profile backdrop</label>
+                            <select id="avatar-background">
+                                <option value="aurora">Aurora</option>
+                                <option value="sunset">Solar Sunset</option>
+                                <option value="ocean">Deep Ocean</option>
+                                <option value="royal">Royal Pulse</option>
+                            </select>
+                        </div>
+                        <button class="avatar-save" type="submit">Save Avatar</button>
+                        <p class="avatar-form-status" id="avatar-form-status" role="status" aria-live="polite"></p>
+                    </form>
+                 </div>
+        </section>
+                <section class="dashboard">
+    <h2>Galaxy Player Profile</h2>
+
+    <div class="stats">
+        <div class="card">
+            <h3>Level</h3>
+            <p id="level">1</p>
+        </div>
+
+        <div class="card">
+            <h3>XP</h3>
+            <p id="xp">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Coins</h3>
+            <p id="coins">100</p>
+        </div>
+     <button id="complete-mission-button" type="button">Complete Mission</button>
+     <button id="daily-reward-button" type="button">Daily Reward</button>
+     <p id="dashboard-status" class="form-status" role="status" aria-live="polite"></p>
+
+    <h2>Inventory</h2>
+    <ul id="inventory">
+        <li>No items owned yet</li>
+    </ul>
+
+    <h2>Galaxy Business Dashboard</h2>
+
+    <div class="stats">
+        <div class="card">
+            <h3>Users</h3>
+            <p id="users">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Items Sold</h3>
+            <p id="sold">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Revenue</h3>
+            <p id="revenue">0</p>
+    </div>
+</section>
+<section id="store" class="section alt">
+            <div class="container">
+                <h2>Galaxy Store</h2>
+<section id="galaxy-store">
+  <p>Choose from multiple cosmetic items for every game with your Galaxy coins.</p>
+
+  <div class="store-grid">
+
+    <div class="store-item">
+      <h3>Fortnite Special</h3>
+      <p>Galaxy King legendary outfit with a royal reactive style.</p>
+      <p class="price">280 coins</p>
+    <button type="button" class="buy-btn" data-item="Galaxy King Legendary Outfit" data-game="Fortnite" data-price="280">Buy</button>
+    </div>
+
+    <div class="store-item">
+      <h3>Valorant Special</h3>
+      <p>Diamond Protocol rifle bundle with an exclusive finisher.</p>
+      <p class="price">320 coins</p>
+    <button type="button" class="buy-btn" data-item="Diamond Protocol Rifle Bundle" data-game="Valorant" data-price="320">Buy</button>
+    </div>
+
+    <div class="store-item">
+      <h3>Minecraft Special</h3>
+      <p>Ender Dragon armor set for legendary survival builds.</p>
+      <p class="price">260 coins</p>
+    <button type="button" class="buy-btn" data-item="Ender Dragon Armor Set" data-game="Minecraft" data-price="260">Buy</button>
+    </div>
+
+    <div class="store-item">
+      <h3>PUBG Special</h3>
+      <p>Elite Survivor crate with a premium combat outfit.</p>
+      <p class="price">300 coins</p>
+    <button type="button" class="buy-btn" data-item="Elite Survivor Crate" data-game="PUBG" data-price="300">Buy</button>
+    </div>
+
+    <div class="store-item">
+      <h3>FIFA Special</h3>
+      <p>World Champion trophy celebration for your club.</p>
+      <p class="price">240 coins</p>
+    <button type="button" class="buy-btn" data-item="World Champion Celebration" data-game="FIFA" data-price="240">Buy</button>
+    </div>
+
+    <div class="store-item">
+      <h3>Genshin Impact Special</h3>
+      <p>Exclusive character skin with a celestial theme.</p>
+      <p class="price">280 coins</p>
+    <button type="button" class="buy-btn" data-item="Celestial Character Skin" data-game="Genshin Impact" data-price="280">Buy</button>
+    </div>
+
+    <div class="store-item">
+      <h3>Nintendo Special</h3>
+      <p>Rainbow Champion premium badge with animated stars.</p>
+      <p class="price">250 coins</p>
+    <button type="button" class="buy-btn" data-item="Rainbow Champion Badge" data-game="Nintendo Games" data-price="250">Buy</button>
+  </div>
+</section>
+
+
+                        </div>
+                    </article>
+                </div>
+                <div class="inventory" aria-live="polite">
+                    <h3>Your collection</h3>
+                    <p id="inventory-list">You have not bought any items yet.</p>
+                </div>
+                <p class="store-status" id="store-status" aria-live="polite">Choose a game to spend your coins.</p>
+            </div>
+        </section>
+        <section id="merchandise" class="section alt doll-store">
+            <div class="container">
+                <p class="doll-kicker">GALAXY ORIGINALS</p>
+                <h2>Galaxy Merchandise</h2>
+                <p class="store-subtitle">Wear your galaxy. Personalize a physical item, add it to your bag, and pay securely at checkout.</p>
+
+                <div class="merch-personalization">
+                    <label for="merch-personalization-name">Personalize your items with a gamer name</label>
+                    <input id="merch-personalization-name" type="text" maxlength="18" value="Galaxy Player" placeholder="Enter a gamer name">
+                    <span>Names are printed exactly as entered.</span>
+                </div>
+
+                <div class="personal-merch-grid" aria-label="Personalized Galaxy merchandise">
+                    <article class="personal-merch-card">
+                        <div class="personal-merch-art art-tee" aria-hidden="true">✦</div>
+                        <div>
+                            <p class="personal-merch-label">Everyday gear</p>
+                            <h3>Galaxy Player Tee</h3>
+                            <p>Soft black tee with your gamer name under the Galaxy mark.</p>
+                        </div>
+                        <strong>₱699</strong>
+                        <button type="button" class="personal-merch-add" data-merch-id="galaxy-player-tee" data-merch-name="Galaxy Player Tee" data-price="699">Buy now</button>
+                    </article>
+
+                    <article class="personal-merch-card">
+                        <div class="personal-merch-art art-hoodie" aria-hidden="true">☄</div>
+                        <div>
+                            <p class="personal-merch-label">Limited drop</p>
+                            <h3>Cosmic Hoodie</h3>
+                            <p>Heavyweight hoodie with a sleeve patch and personalized chest print.</p>
+                        </div>
+                        <strong>₱1,499</strong>
+                        <button type="button" class="personal-merch-add" data-merch-id="cosmic-hoodie" data-merch-name="Cosmic Hoodie" data-price="1499">Buy now</button>
+                    </article>
+
+                    <article class="personal-merch-card">
+                        <div class="personal-merch-art art-mug" aria-hidden="true">☕</div>
+                        <div>
+                            <p class="personal-merch-label">Desk setup</p>
+                            <h3>Player Energy Mug</h3>
+                            <p>Midnight ceramic mug with your name and a bright constellation print.</p>
+                        </div>
+                        <strong>₱499</strong>
+                        <button type="button" class="personal-merch-add" data-merch-id="player-energy-mug" data-merch-name="Player Energy Mug" data-price="499">Buy now</button>
+                    </article>
+
+                    <article class="personal-merch-card">
+                        <div class="personal-merch-art art-mat" aria-hidden="true">⌁</div>
+                        <div>
+                            <p class="personal-merch-label">Battle station</p>
+                            <h3>Constellation Desk Mat</h3>
+                            <p>Large stitched-edge mat with a custom gamer tag in the corner.</p>
+                        </div>
+                        <strong>₱899</strong>
+                        <button type="button" class="personal-merch-add" data-merch-id="constellation-desk-mat" data-merch-name="Constellation Desk Mat" data-price="899">Buy now</button>
+                    </article>
+                </div>
+
+                <h3 class="merch-subheading">Collectible dolls</h3>
+
+    <form class="doll-builder" id="doll-custom-form">
+        <div class="doll-builder-preview" id="doll-preview" data-palette="aurora" aria-hidden="true">🪆</div>
+        <div class="doll-builder-fields">
+            <h3>Design your own</h3>
+            <label for="doll-name">Doll name</label>
+            <input id="doll-name" type="text" maxlength="24" value="My Galaxy Doll" required>
+            <label for="doll-palette">Colorway</label>
+            <select id="doll-palette">
+                <option value="aurora">Aurora teal</option>
+                <option value="flare">Solar coral</option>
+                <option value="grove">Pixel green</option>
+                <option value="prism">Prism multicolor</option>
+                <option value="tide">Deep ocean</option>
+            </select>
+            <button type="submit" class="doll-add-custom">Add custom doll · ₱999</button>
+        </div>
+    </form>
+
+    <div class="doll-shop-layout">
+    <div class="doll-grid">
+
+        <div class="merch-card">
+            <div class="merch-icon doll-card-art" data-palette="aurora" aria-hidden="true">🪆</div>
+            <h3>Aurora Scout</h3>
+            <p>A curious explorer in a teal flight suit with starlight trim.</p>
+            <span class="price">₱899</span>
+            <button type="button" class="doll-add" data-doll-id="aurora-scout" data-doll-name="Aurora Scout" data-price="899">Add to bag</button>
+        </div>
+
+        <div class="merch-card">
+            <div class="merch-icon doll-card-art" data-palette="grove" aria-hidden="true">🪆</div>
+            <h3>Pixel Bloom</h3>
+            <p>A tiny gardener with leaf-green layers and a flower pin.</p>
+            <span class="price">₱799</span>
+            <button type="button" class="doll-add" data-doll-id="pixel-bloom" data-doll-name="Pixel Bloom" data-price="799">Add to bag</button>
+        </div>
+
+        <div class="merch-card">
+            <div class="merch-icon doll-card-art" data-palette="flare" aria-hidden="true">🪆</div>
+            <h3>Ember Pilot</h3>
+            <p>A daring courier in a coral jacket with cloud goggles.</p>
+            <span class="price">₱849</span>
+            <button type="button" class="doll-add" data-doll-id="ember-pilot" data-doll-name="Ember Pilot" data-price="849">Add to bag</button>
+        </div>
+
+        <div class="merch-card">
+            <div class="merch-icon doll-card-art" data-palette="tide" aria-hidden="true">🪆</div>
+            <h3>Tidekeeper</h3>
+            <p>A calm ocean guide with layered blues and a shell charm.</p>
+            <span class="price">₱899</span>
+            <button type="button" class="doll-add" data-doll-id="tidekeeper" data-doll-name="Tidekeeper" data-price="899">Add to bag</button>
+        </div>
+
+        <div class="merch-card">
+            <div class="merch-icon doll-card-art" data-palette="prism" aria-hidden="true">🪆</div>
+            <h3>Prism Warden</h3>
+            <p>A gentle guardian in shifting jewel tones and a clear visor.</p>
+            <span class="price">₱999</span>
+            <button type="button" class="doll-add" data-doll-id="prism-warden" data-doll-name="Prism Warden" data-price="999">Add to bag</button>
+        </div>
+
+        <div class="merch-card">
+            <div class="merch-icon doll-card-art" data-palette="aurora" aria-hidden="true">🪆</div>
+            <h3>Cloud Mechanic</h3>
+            <p>A clever builder with a workshop apron and sky-blue tools.</p>
+            <span class="price">₱849</span>
+            <button type="button" class="doll-add" data-doll-id="cloud-mechanic" data-doll-name="Cloud Mechanic" data-price="849">Add to bag</button>
+        </div>
+
+        <div class="merch-card">
+            <div class="merch-icon doll-card-art" data-palette="grove" aria-hidden="true">🪆</div>
+            <h3>Moonlight DJ</h3>
+            <p>A music-maker with glow details and a star headset.</p>
+            <span class="price">₱899</span>
+            <button type="button" class="doll-add" data-doll-id="moonlight-dj" data-doll-name="Moonlight DJ" data-price="899">Add to bag</button>
+        </div>
+
+        <div class="merch-card">
+            <div class="merch-icon doll-card-art" data-palette="flare" aria-hidden="true">🪆</div>
+            <h3>Comet Courier</h3>
+            <p>A quick-footed messenger with a bright satchel and bold boots.</p>
+            <span class="price">₱799</span>
+            <button type="button" class="doll-add" data-doll-id="comet-courier" data-doll-name="Comet Courier" data-price="799">Add to bag</button>
+        </div>
+
+        <div class="merch-card">
+            <div class="merch-icon doll-card-art" data-palette="prism" aria-hidden="true">🪆</div>
+            <h3>Prism Guardian</h3>
+            <p>An original lightkeeper in bright, hand-picked colors.</p>
+            <span class="price">₱999</span>
+            <button type="button" class="doll-add" data-doll-id="prism-guardian" data-doll-name="Prism Guardian" data-price="999">Add to bag</button>
+        </div>
+
+        <div class="merch-card">
+            <div class="merch-icon doll-card-art" data-palette="tide" aria-hidden="true">🪆</div>
+            <h3>Starfall Nova</h3>
+            <p>A bright-hearted voyager with a deep-ocean cape.</p>
+            <span class="price">₱899</span>
+            <button type="button" class="doll-add" data-doll-id="starfall-nova" data-doll-name="Starfall Nova" data-price="899">Add to bag</button>
+        </div>
+    </div>
+    <aside class="doll-cart" aria-label="Doll shopping bag">
+        <h3>Your bag <span id="doll-cart-count">0</span></h3>
+        <p id="doll-cart-empty">Your bag is empty.</p>
+        <ul id="doll-cart-items"></ul>
+        <div class="doll-cart-total"><span>Total</span><strong id="doll-cart-total-value">₱0</strong></div>
+        <button id="doll-checkout" type="button">Continue to payment</button>
+        <p id="doll-cart-status" role="status" aria-live="polite"></p>
+    </aside>
+    </div>
+</div>
+</section>
+
+<section id="payments" class="section alt">
+    <div class="container">
+        <div class="payment-layout">
+            <div class="payment-box">
+
+                <h2>💳 Choose Payment Method</h2>
+
+                <button
+                    type="button"
+                    class="payment-option"
+                    data-payment="GCash"
+                    aria-pressed="false"
+                    >
+                    📱 GCash
+                </button>
+
+                <button
+                    type="button"
+                    class="payment-option"
+                    data-payment="Maya"
+                    aria-pressed="false"
+                    >
+                    💚 Maya
+                </button>
+
+                <button
+                    type="button"
+                    class="payment-option"
+                    data-payment="Card"
+                    aria-pressed="false"
+                    >
+                    💳 Credit / Debit Card
+                </button>
+
+                <div class="payment-fields">
+                    <label class="payment-field" for="wallet-number">
+                        <span>Wallet Number</span>
+                        <input id="wallet-number" type="tel" inputmode="numeric" placeholder="Enter wallet number">
+                    </label>
+
+                    <label class="payment-field" for="payment-amount">
+                        <span>Amount</span>
+                        <input id="payment-amount" type="number" min="1" step="1" placeholder="Enter amount">
+                    </label>
+                </div>
+
+                <p id="selectedPayment" role="status" aria-live="polite">
+                    No payment method selected
+                </p>
+
+                <p id="paymentDetails" class="payment-details">
+                    Select GCash or Maya to continue to a secure wallet checkout.
+                </p>
+
+                <button
+                    id="checkout-button"
+                    type="button"
+                    class="checkout-button"
+                >Continue to secure checkout</button>
+
+            </div>
+
+            <aside class="payment-doll-item-panel">
+                <p class="payment-bag-kicker">YOUR DOLLS</p>
+                <h3>Your dolls</h3>
+                <ul id="payment-doll-items" class="payment-doll-item-list"></ul>
+            </aside>
+
+            <aside class="payment-order-item-panel">
+                <p class="payment-bag-kicker">ORDER ITEM</p>
+                <h3>Your order</h3>
+                <div class="payment-order-summary">
+                    <span>Order total</span>
+                    <strong id="paymentOrderTotal">₱0</strong>
+                </div>
+            </aside>
+
+            <aside class="payment-bag-panel">
+                <div class="payment-bag-summary">
+                    <p class="payment-bag-kicker">ORDER SUMMARY</p>
+                    <h3>Your bag</h3>
+                    <ul id="payment-bag-items"></ul>
+                    <div class="payment-summary-row">
+                        <span>Subtotal</span>
+                        <strong id="payment-subtotal">₱0</strong>
+                    </div>
+                    <div class="payment-summary-row total-row">
+                        <span>Total</span>
+                        <strong id="payment-total">₱0</strong>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+
+        <div id="paymentProgress" class="payment-progress" hidden>
+
+    <h3>Payment Progress</h3>
+
+    <div class="progress-background">
+        <div id="progressBar"></div>
+    </div>
+
+    <p id="paymentStatus" role="status" aria-live="polite">
+        Preparing payment...
+    </p>
+
+</div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Galaxy</h2>
+                <div class="about-box">
+                    <p>Galaxy Gaming Hub is a welcoming online home for players who want to discover games, connect with other gamers, and enjoy a friendly gaming community.</p>
+                    <p>Use this website to explore our gaming stations, view the games available, check opening hours and events, and learn about the services offered at the hub. Whether you play casually, compete with a team, or are discovering gaming for the first time, Galaxy is designed to make every visit comfortable and exciting.</p>
+                    <p>Our goal is to create a safe and social space where friends, families, students, and competitive players can play together, share experiences, and build new connections.</p>
+                    <div class="stat">
+                </div>
+        </section>
+
+        <section id="services" class="section alt">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="feature-grid">
+                    <article class="card">
+                        <div class="icon">🎮</div>
+                        <h3>Gaming PCs</h3>
+                        <p>Play on powerful gaming PCs with smooth performance for casual and competitive gaming.</p>
+                    </article>
+
+                    <article class="card">
+                        <div class="icon">📶</div>
+                        <h3>Fast Connection</h3>
+                        <p>Stay connected with reliable internet access for gaming, streaming, and socializing.</p>
+                    </article>
+
+                    <article class="card">
+                        <div class="icon">🏆</div>
+                        <h3>Tournaments</h3>
+                        <p>Join friendly competitions, test your skills, and compete for prizes with other players.</p>
+                    </article>
+
+                    <article class="card">
+                        <div class="icon">👥</div>
+                        <h3>Team Play</h3>
+                        <p>Team up with friends, meet new players, and enjoy cooperative gaming in a welcoming space.</p>
+                    </article>
+
+                    <article class="card">
+                        <div class="icon">📹</div>
+                        <h3>Streaming Support</h3>
+                        <p>Capture gameplay, create content, and share your best gaming moments with your audience.</p>
+                    </article>
+
+                    <article class="card">
+                        <div class="icon">🎉</div>
+                        <h3>Gaming Events</h3>
+                        <p>Plan group sessions, gaming nights, and community events for friends, families, and teams.</p>
+                    </article>
+                </div>
+        </section>
+
+        <section id="games" class="section alt">
+            <div class="container">
+                                <h2>Games Available</h2>
+                                <p id="game-launch-status" class="form-status" role="status" aria-live="polite">Open Game App starts the installed game. Official Website opens the game's website.</p>
+                                <div class="game-list">
+                                        <article class="game-card">
+                                                <div class="icon" aria-hidden="true">🎮</div>
+                                                <h3>Fortnite</h3>
+                                                <p class="game-launcher-label">Launcher: Epic Games</p>
+                                                <button class="play-btn" type="button" data-game="fortnite">Open Game App</button>
+                                                <a class="app-link official-site-link" href="https://www.fortnite.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Fortnite official website">Official Website</a>
+                                        </article>
+                                        <article class="game-card">
+                                                <img src="valorant.png" alt="">
+                                                <h3>Valorant</h3>
+                                                <p class="game-launcher-label">Launcher: Riot Client</p>
+                                                <button class="play-btn" type="button" data-game="valorant">Open Game App</button>
+                                                <a class="app-link official-site-link" href="https://playvalorant.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Valorant official website">Official Website</a>
+                                        </article>
+                                        <article class="game-card">
+                                                <div class="icon" aria-hidden="true">⛏️</div>
+                                                <h3>Minecraft</h3>
+                                                <p class="game-launcher-label">Launcher: Minecraft Launcher</p>
+                                                <button class="play-btn" type="button" data-game="minecraft">Open Game App</button>
+                                                <a class="app-link official-site-link" href="https://www.minecraft.net/" target="_blank" rel="noopener noreferrer" aria-label="Visit Minecraft official website">Official Website</a>
+                                        </article>
+                                        <article class="game-card">
+                                            <div class="icon" aria-hidden="true">📱</div>
+                                            <h3>Mobile Legends: Bang Bang</h3>
+                                            <p class="game-launcher-label">Launcher: Android emulator</p>
+                                            <button class="play-btn" type="button" data-game="mlbb">Open Game App</button>
+                                            <a class="app-link official-site-link" href="https://m.mobilelegends.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Mobile Legends official website">Official Website</a>
+                                        </article>
+                                        <article class="game-card">
+                                                <div class="icon" aria-hidden="true">🪖</div>
+                                                <h3>PUBG</h3>
+                                                <p class="game-launcher-label">Launcher: Steam</p>
+                                                <button class="play-btn" type="button" data-game="pubg">Open Game App</button>
+                                                <a class="app-link official-site-link" href="https://pubg.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit PUBG official website">Official Website</a>
+                                        </article>
+                                        <article class="game-card">
+                                                <div class="icon" aria-hidden="true">⚽</div>
+                                                <h3>FIFA</h3>
+                                                <p class="game-launcher-label">Launcher: EA app</p>
+                                                <button class="play-btn" type="button" data-game="fifa">Open Game App</button>
+                                                <a class="app-link official-site-link" href="https://www.ea.com/games/ea-sports-fc" target="_blank" rel="noopener noreferrer" aria-label="Visit EA SPORTS FC official website">Official Website</a>
+                                        </article>
+                                        <article class="game-card">
+                                                <div class="icon" aria-hidden="true">✨</div>
+                                                <h3>Genshin Impact</h3>
+                                                <p class="game-launcher-label">Launcher: HoYoPlay</p>
+                                                <button class="play-btn" type="button" data-game="genshin">Open Game App</button>
+                                                <a class="app-link official-site-link" href="https://genshin.hoyoverse.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Genshin Impact official website">Official Website</a>
+                                        </article>
+                                        <article class="game-card">
+                                                <img src="Wuwe.png" alt="">
+                                                <h3>Wuthering Waves</h3>
+                                                <p class="game-launcher-label">Launcher: Wuthering Waves</p>
+                                                <button class="play-btn" type="button" data-game="wuthering-waves">Open Game App</button>
+                                                <a class="app-link official-site-link" href="https://wutheringwaves.kurogames.com/en/" target="_blank" rel="noopener noreferrer" aria-label="Visit Wuthering Waves official website">Official Website</a>
+                                        </article>
+                                        <article class="game-card">
+                                                <img src="Honkai.png" alt="">
+                                                <h3>Honkai Impact 3rd</h3>
+                                                <p class="game-launcher-label">Launcher: HoYoPlay</p>
+                                                <button class="play-btn" type="button" data-game="honkai-impact-3rd">Open Game App</button>
+                                                <a class="app-link official-site-link" href="https://honkaiimpact3.hoyoverse.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Honkai Impact 3rd official website">Official Website</a>
+                                        </article>
+                                        <article class="game-card">
+                                                <img src="star rail.jpg" alt="">
+                                                <h3>Honkai: Star Rail</h3>
+                                                <p class="game-launcher-label">Launcher: HoYoPlay</p>
+                                                <button class="play-btn" type="button" data-game="honkai-star-rail">Open Game App</button>
+                                                <a class="app-link official-site-link" href="https://hsr.hoyoverse.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Honkai: Star Rail official website">Official Website</a>
+                                        </article>
+                                        <article class="game-card">
+                                                <img src="zenless.png" alt="">
+                                                <h3>Zenless Zone Zero</h3>
+                                                <p class="game-launcher-label">Launcher: HoYoPlay</p>
+                                                <button class="play-btn" type="button" data-game="zenless-zone-zero">Open Game App</button>
+                                                <a class="app-link official-site-link" href="https://zenless.hoyoverse.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Zenless Zone Zero official website">Official Website</a>
+                                        </article>
+                                </div>
+
+
+        <section id="editing" class="creative-section service-section">
+            <div class="container">
+                <h2>Animation & Video Editing</h2>
+                <div class="creative-grid">
+                    <article class="creative-card service-box">
+                        <div class="icon">🎬</div>
+                        <h3>Animation Editing</h3>
+                        <p>We create creative animations for school projects, business promotions, and social media content.</p>
+                        <div class="app-links" aria-label="Animation applications">
+                            <a class="app-link" href="https://www.blender.org/" target="_blank" rel="noopener noreferrer">Blender</a>
+                            <a class="app-link" href="https://www.canva.com/create/animated-videos/" target="_blank" rel="noopener noreferrer" aria-label="Open Canva animated video creator">Canva Animator</a>
+                        </div>
+                    </article>
+
+                    <article class="creative-card service-box">
+                        <div class="icon">🎞️</div>
+                        <h3>Video Editing</h3>
+                        <p>We edit gaming videos, vlogs, short films, and promotional videos with professional effects.</p>
+                        <div class="app-links" aria-label="Video editing applications">
+                            <a class="app-link" href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank" rel="noopener noreferrer">DaVinci Resolve</a>
+                            <a class="app-link" href="https://www.adobe.com/products/premiere.html" target="_blank" rel="noopener noreferrer">Adobe Premiere Pro</a>
+                            <a class="app-link" href="https://www.capcut.com/" target="_blank" rel="noopener noreferrer">CapCut</a>
+                            <a class="app-link" href="https://www.canva.com/video-editor/" target="_blank" rel="noopener noreferrer" aria-label="Open Canva video editor">Canva Video Editor</a>
+                        </div>
+                    </article>
+            </div>
+        </section>
+
+        <section id="events" class="section alt">
+            <div class="container">
+                <h2>Gaming Events</h2>
+                <div class="info-box">
+                    <p>Valorant Tournament - Every Saturday</p>
+                    <p>Mobile Legends Tournament - Every Sunday</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2>About Galaxy Gaming Hub</h2>
+                <div class="info-box">
+                    <p><strong>About Galaxy Gaming Hub:</strong> Galaxy Gaming Hub is a unique place where gamers come together. We offer a cozy environment, high-performance gaming stations. Whether you're here to relax, socialize, or compete, we provide the perfect setting for everyone.</p>
+            </div>
+        </section>
+
+        <section id="newsletter" class="section alt">
+            <div class="container">
+                <h2><img class="section-heading-icon" src="https://static.xx.fbcdn.net/images/emoji.php/v9/tbe/1/16/1f4e7.png" alt="Email"> Subscribe to Our Newsletter</h2>
+                <p>Enter your Gmail to receive updates.</p>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Enter your Gmail address" aria-label="Gmail address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p class="form-status" id="newsletter-status" role="status" aria-live="polite"></p>
+            </div>
+        </section>
+
+        <section id="chat" class="section">
+            <div class="container contact-box">
+                <h2>💬 AI Helper Alexander</h2>
+                <div class="chat-box" id="chat-messages" aria-live="polite">
+                    <p><strong>Alexander:</strong> Hello! I am Alexander, your Galaxy Gaming AI helper. How can I help you today?</p>
+                </div>
+                <div class="chat-prompts" aria-label="Suggested questions">
+                    <button class="chat-prompt" type="button" data-prompt="Recommend a game for me">Recommend a game</button>
+                    <button class="chat-prompt" type="button" data-prompt="Give me a gaming tip">Gaming tips</button>
+                    <button class="chat-prompt" type="button" data-prompt="How do missions and coins work?">Missions and coins</button>
+                    <button class="chat-prompt" type="button" data-prompt="How can I find teammates?">Find teammates</button>
+                </div>
+                <form class="chat-form" id="chat-form">
+                    <input id="chat-input" type="text" placeholder="Type your message..." autocomplete="off" required>
+                    <button type="submit">Send</button>
+                </form>
+                <p class="form-status" id="chat-status" role="status" aria-live="polite"></p>
+            </div>
+        </section>
+
+        <section id="gamer-chat" class="section alt">
+            <div class="container contact-box">
+                <h2>🎮 Gamer Chat</h2>
+                <p>Chat with other Galaxy players, share game tips, and find teammates.</p>
+                <div class="chat-box" id="gamer-messages" aria-live="polite">
+                    <p><strong>Galaxy Gamer:</strong> Welcome to the community chat!</p>
+                </div>
+                <form class="chat-form" id="gamer-chat-form">
+                    <input id="gamer-name" type="text" placeholder="Your gamer name" autocomplete="nickname" required>
+                    <input id="gamer-message" type="text" placeholder="Write a message..." autocomplete="off" required>
+                    <button type="submit">Post</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Galaxy Gaming Hub. All rights reserved.</p>
+        </div>
+    </footer>
+<script src="script.js"></script>
+    <!-- Previous inline JavaScript retained for reference during the split.
+    <script>
+        const authTabs = document.querySelectorAll('.auth-tab');
+        const authPanels = document.querySelectorAll('.auth-panel');
+        const authStatus = document.querySelector('#auth-status');
+        const protectedSections = document.querySelectorAll('main > section:not(.hero):not(#account)');
+        const protectedLinks = document.querySelectorAll('.nav-links a:not([href="#account"])');
+
+        protectedSections.forEach((section) => section.classList.add('protected-section'));
+
+        const unlockSite = (message) => {
+            document.body.classList.add('authenticated');
+            document.body.classList.remove('auth-locked');
+            sessionStorage.setItem('galaxy-authenticated', 'true');
+            authStatus.textContent = message;
+        };
+
+        if (sessionStorage.getItem('galaxy-authenticated') === 'true') {
+            unlockSite('You are signed in. All Galaxy features are unlocked.');
+        }
+
+        protectedLinks.forEach((link) => {
+            link.addEventListener('click', (event) => {
+                if (!document.body.classList.contains('authenticated')) {
+                    event.preventDefault();
+                    authStatus.textContent = 'Please sign up or log in before accessing this area.';
+                    document.querySelector('#account').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        authTabs.forEach((tab) => {
+            tab.addEventListener('click', () => {
+                authTabs.forEach((currentTab) => {
+                    const isActive = currentTab === tab;
+                    currentTab.classList.toggle('active', isActive);
+                    currentTab.setAttribute('aria-selected', String(isActive));
+                });
+
+                authPanels.forEach((panel) => {
+                    panel.hidden = panel.id !== tab.getAttribute('aria-controls');
+                });
+            });
+        });
+
+        document.querySelectorAll('#signup-form, #login-form').forEach((form) => {
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const button = form.querySelector('button[type="submit"]');
+                button.textContent = form.id === 'signup-form' ? 'Account Created' : 'Logged In';
+                button.disabled = true;
+                unlockSite(form.id === 'signup-form'
+                    ? 'Account created. All Galaxy features are now unlocked.'
+                    : 'You are logged in. All Galaxy features are now unlocked.');
+            });
+        });
+
+        const newsletterForm = document.querySelector('#newsletter-form');
+        const newsletterStatus = document.querySelector('#newsletter-status');
+
+        newsletterForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            newsletterStatus.textContent = 'Thanks! You are subscribed to Galaxy updates.';
+            newsletterForm.reset();
+        });
+
+        const chatForm = document.querySelector('#chat-form');
+        const chatInput = document.querySelector('#chat-input');
+        const chatMessages = document.querySelector('#chat-messages');
+
+        chatForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const message = chatInput.value.trim();
+            if (!message) return;
+
+            const userMessage = document.createElement('p');
+            userMessage.textContent = 'You: ' + message;
+            chatMessages.appendChild(userMessage);
+
+            const reply = document.createElement('p');
+            reply.textContent = 'Alexander: Thanks for your message! I will help you with Galaxy Gaming information.';
+            chatMessages.appendChild(reply);
+
+            chatInput.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        });
+    </script>
+    <link rel="stylesheet" href="/styles.css">
+<script src="/script.js" defer></script>
+
+-->
+</body>
+</html>
+
